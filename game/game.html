@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wave Fighter Game</title>
+    <link rel="stylesheet" href="game.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../Fotos/icon/WF-icon.ico" />
+  </head>
+  <body>
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="bossMessage">A Boss Has Appeared!</div> <!-- This will be shown when the boss spawns -->
+
+    <div class="container">
+      <div class="xp-bar-background">
+          <div id="xpBar" class="xp-bar"></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="stat-label">Level:</span> <span id="level">1</span></div>
+          <div class="stat"><span class="stat-label">Wave:</span> <span id="wave">1</span></div>
+          <div class="stat"><span class="stat-label">Health:</span> <span id="health">100</span></div>
+      </div>
+  </div>
+
+    <div id="game"></div>
+    <div id="pauseMenu" class="hidden">
+      <button id="resumeButton">&#11208; Resume &#11207;</button>
+      
+        <button id="Menu-Button" onclick="MyFunction()">&#11208; Main Menu &#11207;</button>
+        <script>function MyFunction() {window.location.href = "/main/main.html";}</script>
+      
+    </div>
+    
+
+    <div id="timer">0:00</div>
+    
+    <div id="fpsDisplay" style="position: absolute; top: 10px; left: 10px; font-size: 24px; color: white; z-index: 1000; display: none;"></div>
+
+
+
+
+    <p id="coinDisplay">Coins: error</p>
+
+    <h2 id="Game-Over" class="Game-Over-Text">Game Over</h2>
+    <div id="game-over-button" style="display: none;">
+      <a href="/game/game.html"><button id="Button1">Retry</button></a>
+      <a href="../main/main.html"><button id="Button2">Main Menu</button></a>
+  </div>
+  
+    <!--- <script src="script2.js"></script> -->
+    <!--<script src="game.js"></script>-->
+    <script src="../script.js"></script>
+  </body>
+</html>

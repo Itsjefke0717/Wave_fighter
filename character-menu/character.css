@@ -1,0 +1,289 @@
+body {
+  font-family: "Press Start 2P", cursive;
+  background-color: #2b2b2b;
+  color: #fff;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.background {
+  position: absolute;
+  background-image: url(../Fotos/backgrounds/background4.png);
+  background-position: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  z-index: -1;
+}
+
+/* Back button */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.back-button button {
+  font-family: "Press Start 2P", cursive;
+  background: linear-gradient(145deg, #53290f, #b8570b);
+  color: #ffd700;
+  padding: 10px 15px;
+  font-size: 25px;
+  border: 4px solid #3a1e0b;
+  text-transform: uppercase;
+  box-shadow: 0 4px #2b1a08;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s ease;
+}
+
+.back-button button:hover {
+  background: linear-gradient(145deg, #b8570b, #ff9a1f);
+  transform: scale(1.1);
+}
+
+/* Character and skill section */
+.selector {
+  display: flex;
+  justify-content: center;
+  align-items: right;
+  margin-top: 70px;
+  gap: 30px;
+  flex-wrap: wrap; /* Voeg flex-wrap toe voor kleinere schermen */
+}
+
+.character {
+  width: 400px;
+  height: 550px;
+  border: 6px solid #ffd700; /* Goudgele rand */
+  background: #2e1c29;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  animation: flicker 2s infinite;
+}
+
+.character img {
+  display: block; /* Voorkom dat de afbeelding inline-ruimte inneemt */
+  width: 400px; /* Vaste breedte */
+  height: 550px; /* Vaste hoogte */
+  image-rendering: pixelated; /* Zorg dat de afbeelding 'pixelated' blijft */
+  margin: 0 auto; /* Zorg dat de afbeelding horizontaal gecentreerd blijft binnen de container */
+}
+
+/* Right container to hold skills and select button */
+.right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 20px; /* Space between the character and skills */
+}
+
+/* Skills Section */
+.skills {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  min-width: 300px; /* Minimale breedte */
+  max-width: 600px; /* Maximale breedte */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* Voorkom dat tekst wordt afgekapt */
+.skills p {
+  white-space: normal; /* Sta meerdere regels toe */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+
+.skills button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(145deg, #e69e00, #ffcc00);
+  border: none;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  border-radius: 5px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.skills button:hover {
+  background: linear-gradient(145deg, #ffb800, #ffdf00);
+  transform: scale(1.05);
+}
+
+.right-container button#Select {
+  font-family: "Press Start 2P", cursive;
+  background: linear-gradient(145deg, #1f7a1f, #32cd32);
+  color: #fff;
+  border: 4px solid #0f4f0f;
+  text-transform: uppercase;
+  box-shadow: 0 4px #0a320a;
+  padding: 20px;
+  margin-top: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+/* Navigation buttons at the bottom */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 600px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.nav-buttons button {
+  font-family: "Press Start 2P", cursive;
+  background: linear-gradient(145deg, #53290f, #b8570b);
+  color: #ffd700;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 4px solid #3a1e0b;
+  box-shadow: 0 4px #2b1a08;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s ease;
+}
+
+.nav-buttons button:hover {
+  background: linear-gradient(145deg, #b8570b, #ff9a1f);
+  box-shadow: 0 6px #2b1a08;
+  transform: scale(1.1);
+}
+
+.nav-buttons button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    box-shadow: 0 0 10px #ffd700, 0 0 30px #ffd700;
+  }
+  50% {
+    box-shadow: 0 0 20px #ffae00, 0 0 40px #ffae00;
+  }
+}
+
+/* Coin Display Styling */
+#coinDisplay {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.0);
+  color: #ffd700;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+
+
+
+
+
+
+
+
+/* Container voor notificaties, positie rechtsboven */
+#notificationContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 9999;
+}
+
+/* Stijl voor de notificatie met een animatie */
+.notification {
+  border-radius: 5px;
+  width: 250px;
+  height: 50px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  background-color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  box-shadow:  9px 9px 18px #000000,
+              -9px -9px 18px #3a280d;
+  color: #0ad406;
+  margin-bottom: 10px;
+  position: relative;
+  right: -300px;  /* Startpositie buiten beeld */
+  animation: slideIn 0.5s forwards;
+}
+
+.notification:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+
+/* Animatie voor het binnenkomen van rechts */
+@keyframes slideIn {
+  from {
+    right: -300px;
+  }
+  to {
+    right: 0;
+  }
+}
+
+/* Animatie voor het verdwijnen naar rechts */
+@keyframes slideOut {
+  from {
+    right: 0;
+  }
+  to {
+    right: -300px;
+  }
+}
+
+/* Shine effect op het icoon */
+@keyframes shine {
+  0% {
+    color: #2B3246;
+  }
+  50% {
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 40px red,
+      0 0 60px red,
+      0 0 80px red;
+  }
+}
+
+/* Animatie effect op het icoon */
+.color {
+  animation: shine 2s linear infinite;
+}

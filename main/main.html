@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,25" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Wave Fighter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../Fotos/icon/WF-icon.ico" />
+    
+      <link rel="preload" href="../Fotos/backgrounds/background3.png" as="image">
+    </head>
+
+  <body>
+    <audio id="backgroundMusic" autoplay loop>
+      <source src="../Songs/pixel-song-21-72593.mp3" type="audio/mp3">
+      Je browser ondersteunt geen audio-elementen.
+    </audio>
+    <div class="container">
+      <div class="button-box">
+        <button
+          type="button"
+          class="start-button"
+          onclick="location.href='../game/game.html';"
+        >
+          Start
+        </button>
+        <button
+          type="button"
+          class="character-button"
+          onclick="location.href='../character-menu/character.html';"
+        >
+          Character
+        </button>
+        <button type="button" class="quit-button" onclick="window.close();">
+          Quit
+        </button>
+      </div>
+      <div class="credits-button">
+        <button type="button" class="button-credits" onclick="showCredits()">
+          Credits
+        </button>
+      </div>
+      <div class="admin-button">
+        <button type="button" id="adminButton" class="button-admin">
+          Admin
+        </button>
+      </div>
+      <div class="background"></div>
+    </div>
+    <p id="coinDisplay">Coins: error</p>
+    <div class="overlay" id="creditsOverlay" onclick="hideCredits()">
+      <div class="credits-content">
+        <div class="credits">
+          <h1><b>Credits</b></h1>
+          <p>
+            Programmeurs: <br />Vince Douma<br />
+            Jeffrey Riewald<br />
+            Luis Maerkens
+          </p>
+          <br /><br /><br /><br /><br />
+          <h1><b>Character: Assassin</b></h1>
+          <p>
+            Made by:<br />
+            Vince Douma
+          </p>
+          <br /><br /><br /><br /><br />
+          <h1><b>Character: Warrior</b></h1>
+          <p>
+            Made by:<br />
+            Vince Douma
+          </p>
+          <br /><br /><br /><br /><br />
+          <h1><b>Character: Tank</b></h1>
+          <p>
+            Made by:<br />
+            Vince Douma
+          </p>
+          <br /><br /><br /><br /><br />
+          <h1><b>Wave Fighter</b></h1>
+          <p>
+            <br />Vince Douma<br />
+            Jeffrey Riewald<br />
+            Luis Maerkens
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="adminOverlay" class="hidden">
+      <div id="adminMenu" class="admin-menu">
+        <h1>Admin Menu</h1>
+        <label for="siteTitle">Change coins:</label>
+        <input type="text" id="changeCoins" placeholder="1000" />
+        <label for="siteTitle">Change Character:</label>
+        <div class="character-selection">
+          <button id="assassinButton">Assassin</button>
+          <button id="warriorButton">Warrior</button>
+          <button id="tankButton">Tank</button>
+        </div>
+        <label for="siteTitle">Debug:</label>
+        <div class="Debug">
+          <button id="Debug">Debug on/off</button>
+        </div>
+        <div class="admin-buttons">
+          <button id="saveChanges" class="button">Save Changes</button>
+          <button id="closeMenu" class="button">Close Menu</button>
+        </div>
+      </div>
+    </div>
+
+<!-- Zorg ervoor dat je de modules op de juiste manier laadt -->
+<script src="main.js"></script>
+
+  </body>
+</html>

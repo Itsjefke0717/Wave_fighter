@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wave Fighter Character</title>
+    <link rel="stylesheet" href="character.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../Fotos/icon/WF-icon.ico">
+    <link rel="preload" href="../Fotos/backgrounds/background4.png" as="image">
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="back-button">
+      <button type="button" onclick="window.location.href='../main/main.html'">
+        &#60; Back
+      </button>
+    </div>
+
+    <div class="selector">
+      <div class="character" id="character-display">
+        <img id="character-image" src="../Fotos/characater_cards/warrior3.png" alt="Warrior" />
+      </div>
+        
+      <div class="right-container">
+        <div class="skills" id="skills-display">
+          <p><strong>Name:</strong> test</p>
+          <p><strong>Health:</strong> 100</p>
+          <p><strong>Strength:</strong> 2</p>
+          <p><strong>Speed:</strong> 5</p>
+          <p><strong>Ability:</strong> i dont know</p>
+          <button class="upgrade-btn" id="upgrade" onclick="showNotification()">Upgrade</button>
+        </div>
+        <button id="Select"><b>Select Character</b></button>
+        <div id="character-buttons-container"></div>
+      </div>
+    </div>
+    <p id="coinDisplay">Coins: error</p>
+<div id="notificationContainer"></div>
+
+
+    <div class="nav-buttons">
+      <button id="prev" onclick="navigate('prev')">Prev</button>
+      <button id="next" onclick="navigate('next')">Next</button>
+    </div>
+    <script src="character.js"></script>
+    <script src="https://kit.fontawesome.com/d2a3cb1a8d.js" crossorigin="anonymous"></script>
+  </body>
+</html>
